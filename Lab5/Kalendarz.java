@@ -33,14 +33,17 @@ public class Kalendarz {
         }
     }
 
-    public void wyswietlSpotkania(int dzienTygodnia, Predicate<Spotkanie> warunek) {
+    public ArrayList<Spotkanie> wyswietlSpotkania(int dzienTygodnia, Predicate<Spotkanie> warunek) {
+        ArrayList<Spotkanie> spotkaniaDoWyswietlenia = new ArrayList<>();
         if (dzienTygodnia >= 0 && dzienTygodnia < 7) {
             ArrayList<Spotkanie> spotkania = spotkaniaTygodniowe.get(dzienTygodnia);
             for (Spotkanie spotkanie : spotkania) {
                 if (warunek.test(spotkanie)) {
-                    System.out.println(spotkanie);
+                    spotkaniaDoWyswietlenia.add(spotkanie);
                 }
             }
         }
+        return spotkaniaDoWyswietlenia;
     }
+    
 }

@@ -70,7 +70,7 @@ public class Main {
     public static void wyswietlSpotkaniaDanegoDnia(Scanner scanner, Kalendarz kalendarz) {
         System.out.println("Podaj dzień tygodnia (0-6): ");
         int dzienTygodnia = scanner.nextInt();
-        kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> true);
+        System.out.println(kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> true));
     }
 
     public static void wyswietlSpotkaniaOdPodanegoCzasu(Scanner scanner, Kalendarz kalendarz) {
@@ -80,7 +80,7 @@ public class Main {
         int godzina = scanner.nextInt();
         System.out.println("Podaj minutę: ");
         int minuta = scanner.nextInt();
-        kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> !spotkanie.getCzasPoczatku().isBefore(LocalTime.of(godzina, minuta)));
+        System.out.println(kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> !spotkanie.getCzasPoczatku().isBefore(LocalTime.of(godzina, minuta))));
     }
     
     public static void wyswietlSpotkaniaPoPriorytecie(Scanner scanner, Kalendarz kalendarz) {
@@ -88,7 +88,7 @@ public class Main {
         int dzienTygodnia = scanner.nextInt();
         System.out.println("Podaj priorytet (0-2): ");
         int priorytet = scanner.nextInt();
-        kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> spotkanie.getPriorytet() == priorytet);
+        System.out.println(kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> spotkanie.getPriorytet() == priorytet));
     }
 
     public static void wyswietlSpotkaniaWPrzedzialeCzasu(Scanner scanner, Kalendarz kalendarz) {
@@ -102,8 +102,9 @@ public class Main {
         int godzinaKoncowa = scanner.nextInt();
         System.out.println("Podaj minutę końcową: ");
         int minutaKoncowa = scanner.nextInt();
-        kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> 
+        System.out.println(kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> 
                 !spotkanie.getCzasPoczatku().isBefore(LocalTime.of(godzinaPoczatkowa, minutaPoczatkowa)) && !spotkanie.getCzasZakonczenia().isAfter(LocalTime.of(godzinaKoncowa, minutaKoncowa))
+            )
             );
     }
 
@@ -116,7 +117,7 @@ public class Main {
         int godzina = scanner.nextInt();
         System.out.println("Podaj minutę: ");
         int minuta = scanner.nextInt();
-        kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> spotkanie.getPriorytet() == priorytet && !spotkanie.getCzasPoczatku().isBefore(LocalTime.of(godzina, minuta)));
+        System.out.println(kalendarz.wyswietlSpotkania(dzienTygodnia, spotkanie -> spotkanie.getPriorytet() == priorytet && !spotkanie.getCzasPoczatku().isBefore(LocalTime.of(godzina, minuta))));
     }
 
     public static void testujKalendarz(Scanner scanner, Kalendarz kalendarz) {

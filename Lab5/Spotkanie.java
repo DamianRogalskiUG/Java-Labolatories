@@ -28,6 +28,6 @@ public class Spotkanie {
 
     @Override
     public String toString() {
-        return "Spotkanie: " + opis + ", Czas rozpoczęcia: " + czasPoczatku + ", Czas zakończenia: " + czasZakonczenia + ", Priorytet: " + priorytet;
+        return "Spotkanie: " + opis + ", Czas rozpoczęcia: " + czasPoczatku + ", Czas zakończenia: " + czasZakonczenia + ", Priorytet: " + priorytet + "\n";
     }
 }
