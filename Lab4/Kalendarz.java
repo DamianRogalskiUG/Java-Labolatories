@@ -16,7 +16,7 @@ public class Kalendarz {
         if (dzienTygodnia >= 0 && dzienTygodnia < 7) {
             spotkaniaTygodniowe.get(dzienTygodnia).add(spotkanie);
         }
-        
+
     }
 
     public void usunSpotkanie(int dzienTygodnia, String opisSpotkania) {
@@ -58,4 +58,5 @@ public class Kalendarz {
             }
         }
     }
+    
 }
